@@ -1,0 +1,482 @@
+/*Color paletes
+
+
+
+Red: #FF4F5D
+Green: #75FF68
+Blue: #607BFF
+Purple: #412B96
+Orange: #FF761C
+
+Yellow: #F6DC3B
+White: #E6E9EB
+Black: #10113C
+
+https://drive.google.com/file/d/1DnLa-yQKCle50ccFZorU2FaJKPfBIaIo/view?usp=sharing Diagrama de flujo
+
+*/
+
+                                                /*Flipcards effect*/
+
+/*NotHovers*/
+#elemento-enemigo {
+    color: #607BFF;
+}
+#elemento-jugador {
+    color: #FF4F5D;
+}
+
+.plasmaRay {
+    color: #FF4F5D;
+    size: 0%;
+}
+.liquidDrop {
+    color: #607BFF;
+    size: 0%;
+}
+.radiationSpread {
+    color: #75FF68;
+    size: 0%;
+}
+
+#elemento-jugador-vidas,#elemento-enemigo-vidas {
+    font-size: 250%;
+    color: #FF4F5D;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.tarjetas {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    perspective: 250px;
+}
+
+#ProtoblasterFlashcard, #ElectrorayFlashcard, #NeutrocromoFlashcard, #ZeeSSFlashcard, #PythosFlashcard, #HacheFlashcard, #BigBrotherFlashcard, #CapitainMontagFlashcard, #FordFlashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform-style: preserve-3d;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    border: 4px #10113C;
+    border-style: none dashed solid none;
+    border-radius: 10px;
+}
+
+#ProtoblasterFlashcardFront, #ElectrorayFlashcardFront, #NeutrocromoFlashcardFront, #ZeeSSFlashcardFront, #PythosFlashcardFront, #BigBrotherFlashcardFront, #CapitainMontagFlashcardFront, #FordFlashcardFront {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#ProtoblasterFlashcardBack, #ElectrorayFlashcardBack, #NeutrocromoFlashcardBack, #ZeeSSFlashcardBack, #PythosFlashcardBack, #HacheFlashcardBack, #BigBrotherFlashcardBack, #CapitainMontagFlashcardBack, #FordFlashcardBack {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    transform: rotateY(180deg);
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    color: white;
+    box-sizing: border-box;
+    border: 4px white;
+    border-style: dashed;
+    border-radius: 10px;
+}
+
+#ProtoblasterFlashcardBack {
+    background-color: #FF4F5D;
+    box-shadow: 0px 0px 0px 5px #FF4F5D;
+}
+
+#ElectrorayFlashcardBack {
+    background-color: #607BFF;
+    box-shadow: 0px 0px 0px 5px #607BFF;
+}
+
+#NeutrocromoFlashcardBack {
+    background-color: #75FF68;
+    box-shadow: 0px 0px 0px 5px #75FF68;
+}
+
+#ZeeSSFlashcardBack {
+    background-color: #412B96;
+    box-shadow: 0px 0px 0px 5px #412B96;
+}
+
+#PythosFlashcardBack {
+    background-color: #607BFF;
+    box-shadow: 0px 0px 0px 5px #607BFF;
+}
+
+#HacheFlashcardBack {
+    background-color: #E6E9EB;
+    box-shadow: 0px 0px 0px 5px #E6E9EB;
+}
+
+#BigBrotherFlashcardBack {
+    background-color: #FF4F5D;
+    box-shadow: 0px 0px 0px 5px #FF4F5D;
+}
+
+#CapitainMontagFlashcardBack {
+    background-color: #FF761C;
+    box-shadow: 0px 0px 0px 5px #FF761C;
+}
+
+#FordFlashcardBack {
+    background-color: #607BFF;
+    box-shadow: 0px 0px 0px 5px #607BFF;
+}
+
+
+/*Hovers*/
+#ProtoblasterCardContainer:hover > #ProtoblasterFlashcard, #ElectrorayCardContainer:hover > #ElectrorayFlashcard, #NeutrocromoCardContainer:hover > #NeutrocromoFlashcard, #ZeeSSCardContainer:hover > #ZeeSSFlashcard, #PythosCardContainer:hover > #PythosFlashcard, #HacheCardContainer:hover > #HacheFlashcard, #BigBrotherCardContainer:hover > #BigBrotherFlashcard, #CapitainMontagCardContainer:hover > #CapitainMontagFlashcard, #FordCardContainer:hover > #FordFlashcard {
+    transform: rotateY(180deg);
+}
+
+#protoblaster-label-front, #protoblaster-label-back, #electroray-label-front, #electroray-label-back, #neutrocromo-label-front, #neutrocromo-label-back, #zeess-label-front, #zeess-label-back, #pythos-label-front, #pythos-label-back, #hache-label-front, #hache-label-back, #bigbrother-label-front, #bigbrother-label-back, #capitainmontag-label-front, #capitainmontag-label-back, #ford-label-front, #ford-label-back {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+                                                /*Setting the fonts*/
+@font-face {
+    /*Font properties*/
+    font-family: "BTTF2002";
+    src: url(Fonts/BTTF.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    /*Font properties*/
+    font-family: "Conthrax";
+    src: url(Fonts/Nulshock.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Square";
+    src: url(Fonts/Square.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Segmented";
+    src: url(Fonts/DS-DIGIT.TTF);
+    font-weight: normal;
+}
+
+                                            /*Modifying the scrollbar*/
+#historial-batalla {
+    width: 100%;
+    height: 100%;
+}
+
+/* #contenedor-historial-batalla {
+    
+	overflow-y: scroll;
+    overflow-x: scroll;
+    height: 500px;
+} */
+
+::-webkit-scrollbar {
+    /*Size properties*/
+	width: 10px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    /*Background properties*/
+	background-color: #10113C;
+
+    /*Border properties*/
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner, ::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+#contenedor-historial-batalla {
+    height: 1000px;
+    width: 900px;
+
+    overflow: scroll;
+
+    border: 5px;
+    border-image: radial-gradient(circle, rgba(16,17,60,1) 50%, rgba(255,255,255,0) 100%);
+    border-image-slice: 1;
+    border-style: solid none solid none;
+    border-radius: 14px;
+    margin-bottom: -150px;
+    margin-left: -100px;
+    margin-right: -100px;
+}
+
+                                            /*Making the background*/
+body {
+    /*Background properties*/
+    background-image: url(Images/Background.png);
+    background-size: 75%;
+    transition-property: background-image;
+    transition-timing-function: ease-in-out;
+    transition: 500ms;
+}
+                                                /*Sections*/
+#elegir-elemento {
+    /*Display properties*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*Size properties*/
+    height: 549px;
+    width: 1317px;
+}
+
+#elegir-ataque-elemento {
+    /*Display properties*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-reiniciar-juego {
+    width: 1250px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #10113C;
+    margin-top: 150px;
+
+ }
+ 
+                                    /*Setting the elements flashcards*/
+
+#elementos-tarjetas {
+    width: 1300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+#ver-mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa {
+    border: 2px dashed #10113C;
+}
+
+.titulo, .subtitulo, .parrafo, .Boton {
+    margin: 0px;
+    color: #10113C;
+}
+
+/* .ContenedorBCyI {
+    height: fit-content;
+} */
+
+#Text-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: fit-content;
+    height: fit-content;
+}
+
+#Battle-area {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: auto;
+    height: 300px;
+    margin: 10px;
+}
+
+#ContenedorAtaques {
+    height: fit-content;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.BotonContenedor {
+    width: 1250px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Boton {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 4px #10113C;
+    border-style: none dashed solid none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.BotonContenedor:hover > .Boton {
+    cursor: pointer;
+    perspective: 1000px;
+    transition: 100ms ease-in;
+    transform: scale(1.05);
+    
+}
+
+.BotonContenedor:not(:hover) > .Boton {
+    cursor: pointer;
+    perspective: 1000px;
+    transition: 100ms ease-in;
+    transform: scale(1) rotateY(0deg) rotateZ(0deg);
+}
+
+.BotonContenedor{
+    margin: 10px;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* TEXT */
+
+.titulo {
+    font-family: "BTTF2002";
+    font-size: 1000%;
+}
+
+.subtitulo, .parrafo1, .parrafo2, .parrafo3, .Boton {
+    font-family: "Conthrax";
+}
+
+.subtitulo {
+    font-size: 200%;
+}
+
+.parrafo1 {
+    font-size: 100%;
+}
+
+.parrafo2 {
+    font-size: 50%;
+}
+
+.parrafo3 {
+    font-size: 10%;
+}
+
+.parrafo4 {
+    font-family: "Square";
+    font-size: 125%;
+    margin: 25px;
+    justify-content: center;
+}
+
+#choose-your-attack {
+    font-size: 500%;
+}
+
+#elementos {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: fit-content;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#jugador-elemento {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#elemento-enemigo-vidas, #elemento-jugador-vidas {
+   font-family: "Segmented";
+   font-size: 500%;
+}
+
+#enemigo-elemento {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    border: 4px #10113C;
+    border-style: none dashed solid none;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px; */
+}
+
+input[type="radio"] {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+p,h1 {
+    margin: 5px;
+    display: flex;
+    text-align: center;
+}

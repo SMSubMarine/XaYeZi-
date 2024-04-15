@@ -1,0 +1,84 @@
+.elemento {
+
+    /*Display properties*/
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    /*Size properties*/
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+
+    /*Border properties*/
+    border: 4px #10113C;
+    border-style: none dashed solid none;
+    border-radius: 10px;
+
+    /*Background properties*/
+     background: #F6DC3B;
+
+    /*Font properties*/
+    font-family: "Conthrax";
+}
+
+.titulo {
+    /*Color properties*/
+    color: #10113C;
+
+    /*Size properties*/
+    margin: 0px;
+
+    /*Font properties*/
+    font-family: "BTTF2002";
+    font-size: 1000%;
+}
+
+.subtitulo {
+    /*Color properties*/
+    color: #10113C;
+
+    /*Font properties*/
+    font-size: 200%;
+}
+
+.subtitulo,.parrafo,.boton{
+    /*Color properties*/
+    color: #10113C;
+
+    /*Font properties*/
+    font-family: "Conthrax";
+}
+
+/*IDS*/
+#protoblaster-label,#electroray-label,#neutrocromo-label {
+    /*Display properties*/
+    display: flex;
+    flex-direction: column;
+
+    /*Color properties*/
+    color: #10113C;
+}
+
+/*Inputs and Buttons*/
+input[type="radio"] {
+    /*Display properties*/
+    display: none;
+
+    /*Color properties*/
+    color: #10113C;
+}
+
+button {
+    /*Color properties*/
+    color: #10113C;
+    background-color: #F6DC3B;
+
+    /*Border properties*/
+    border: 4px #10113C;
+    border-style: none dashed solid none;
+    border-radius: 10px;
+}

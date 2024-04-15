@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡XaYeZi⚡💦🌿!</title>
+    <link rel="stylesheet" href="./CSS/XaYeZi.css">
+</head>
+<body>
+
+    <section id="elegir-elemento" class="Seccion">
+
+        <h1 class="titulo">¡XaYeZi!</h1>
+        <h2 Class="subtitulo">Choose your Element!:</h2>
+
+        <section id="elementos-tarjetas" class="SubSeccion">
+
+        </section>
+
+        <p class="BotonContenedor">
+            <button id="confirmar-seleccion" class="Boton">Let the brawl begin!</button>
+        </p>
+
+    </section>
+
+    <section id="ver-mapa">
+        <h2 class="subtitulo">MAPA</h2>
+        <canvas id="mapa"></canvas>
+        <button onmousedown="moverProtoblaster('x', 5)" onmouseup="detenerProtoblaster()">Derecha</button>
+        <button onmousedown="moverProtoblaster('x', -5)" onmouseup="detenerProtoblaster()">Izquierda</button>
+        <button onmousedown="moverProtoblaster('y', -5)" onmouseup="detenerProtoblaster()">Arriba</button>
+        <button onmousedown="moverProtoblaster('y', 5)" onmouseup="detenerProtoblaster()">Abajo</button>
+    </section>
+
+    <section id="elegir-ataque-elemento" class="Seccion">
+        
+        <div id="Text-area">
+            <h2 class="subtitulo" id="choose-your-attack">Choose your attack!:</h2>
+
+        </div>
+        <div id="elementos">
+            <div class="parrafo" id="jugador-elemento">
+                <label class="parrafo1"><span id="elemento-jugador"></span> victories: <br/> <span id="elemento-jugador-victorias" class="vidas"> 0 </span><label>
+            </div>
+
+            <div id="Battle-area">
+                <div id="ContenedorAtaques">
+                </div>
+        
+                <div id="contenedor-historial-batalla">
+                    <div id="historial-batalla"></div>
+                </div>
+            </div>
+
+            <div class="parrafo" id="enemigo-elemento">
+                <label class="parrafo1"><span id="elemento-enemigo"></span> victories: <br/> <span id="elemento-enemigo-victorias"> 0 </span></label>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="reiniciar-juego" class="Seccion">
+        <div id="div-reiniciar-juego">
+            <div class="BotonContenedor">
+                <button id="boton-reiniciar" class="Boton">Replay 🔄!</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/XaYeZi.js"></script>
+
+</body>
+</html>
